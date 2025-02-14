@@ -17,11 +17,23 @@ class main:
     random_word = game.guess_word()
     print(f"{random_word}\n")
 
-    usr_input = input("input a four letter word\n")
-    if usr_input == random_word:
-        print("you guessed right\n")
-    else:
-        print("incorrect guess\n")
+    print("Welcome to Word Guess! You have 5 turns to guess the word. Please enter your first guess:\n")
+
+    count = 0
+    while True:
+        if count == 5:
+            print("you loose")
+            break
+        else:
+            usr_input = input("input a four letter word\n")
+            if usr_input == random_word:
+                print("You got it! Amazing!\n")
+                break
+            else:
+                print("incorrect guess\n")
+            count+=1
+        
+        
 
 
 
