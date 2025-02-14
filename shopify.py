@@ -13,7 +13,8 @@ class game:
 
 
 class main:
-    game = game(["able", "belt", "bolt", "cast", "cash", "knot", "note", "near", "over", "salt", "wind"])
+    Dict = ["able", "belt", "bolt", "cast", "cash", "knot", "note", "near", "over", "salt", "wind"]
+    game = game(Dict)
     random_word = game.guess_word()
     print(f"{random_word}\n")
 
@@ -26,12 +27,15 @@ class main:
             break
         else:
             usr_input = input("input a four letter word\n")
-            if usr_input == random_word:
-                print("You got it! Amazing!\n")
-                break
-            else:
-                print("incorrect guess\n")
-            count+=1
+            if (usr_input in Dict):
+                if usr_input == random_word:
+                    print("You got it! Amazing!\n")
+                    break
+                else:
+                    print("incorrect guess\n")
+                count+=1
+        
+            print(f"you have {5-count} more guesses")
         
         
 
